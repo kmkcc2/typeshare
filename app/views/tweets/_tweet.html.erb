@@ -6,12 +6,12 @@
 
   <p>
     <strong>Owner:</strong>
-    <%= tweet.owner %>
+    <%= User.find(tweet.user_id).email %>
   </p>
 
   <p>
     <strong>Likes:</strong>
-    <%= tweet.likes %>
+    <%= tweet.likes.blank? ? 0 : tweet.likes %>
   </p>
 
 </div>
