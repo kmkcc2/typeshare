@@ -1,9 +1,11 @@
 class TweetsController < ApplicationController
-  before_action :set_tweet, only: %i[ show edit update destroy ]
+  before_action :set_tweet, only: %i[ show edit update destroy like unlike]
   before_action :authenticate_user!
   # GET /tweets or /tweets.json
   def index
-    @tweets = current_user.tweets
+    # @tweets = current_user.tweets
+    @tweets = Tweet.all.order(created_at: :DESC)
+    @tweet = current_user.tweets.new 
   end
 
   # GET /tweets/1 or /tweets/1.json
@@ -25,7 +27,7 @@ class TweetsController < ApplicationController
 
     respond_to do |format|
       if @tweet.save
-        format.html { redirect_to tweet_url(@tweet), notice: "Tweet was successfully created." }
+        format.html { redirect_to root_path, notice: "Tweet was successfully created." }
         format.json { render :show, status: :created, location: @tweet }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -56,6 +58,26 @@ class TweetsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  # Add like to a tweet 
+  def like
+    @like = @tweet.likes.build({user_id: current_user.id})
+
+    if @like.save
+      redirect_to root_path
+      puts "/#tweet_"+@tweet.id.to_s
+      puts "duuuupa"
+    else
+      redirect_to tweets_url, alert: @like.errors
+    end
+  end
+
+  def unlike
+    @like = @tweet.likes.find_by(user_id: current_user.id)
+
+    @like.destroy
+
+    redirect_to root_path
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -67,4 +89,9 @@ class TweetsController < ApplicationController
     def tweet_params
       params.require(:tweet).permit(:body, :owner_id)
     end
+
+    def like_params
+      params.permit(:id)
+    end
+
 end

@@ -14,7 +14,38 @@
  *= require_self
  */
 @import "bootstrap";
-
+$background-base-color: #181818;
+$background-hover-color: #191919;
+$background-second-color: #202020;
 body {
-    margin: 1em;
+    background-color: $background-base-color;
+    color: white;
+}
+nav {
+    margin-bottom: 1em;
+    background-color: $background-second-color;
+    color: white;
+}
+.background-second-color{
+    background-color: $background-second-color;
+}
+
+.background-base-color{
+    background-color: $background-base-color;
+}
+
+.tweet-container{
+    border: 2px $background-base-color solid;
+    transition-duration: 0.2s;
+}
+.tweet-container:hover{
+    background-color: $background-hover-color;
+    transition-duration: 0.2s;
+}
+.heart-hover{
+    transition-duration: 0.2s;
+}
+.heart-hover:hover{
+    transform: scale(1.2);
+    transition-duration: 0.2s;
 }

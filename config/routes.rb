@@ -6,4 +6,8 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
   root to: "tweets#index"
+
+  get '/tweet/:id/like', to: 'tweets#like', as: 'like'
+  get '/tweet/:id/unlike', to: 'tweets#unlike', as: 'unlike'
+
 end

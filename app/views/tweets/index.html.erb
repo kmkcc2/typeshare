@@ -1,12 +1,12 @@
-<h1>Tweets</h1>
+<%= render "form", tweet: @tweet %>
 
-<div id="tweets">
+
+<div id="tweets" class="mt-5">
   <% @tweets.each do |tweet| %>
-    <%= render tweet %>
-    <p>
-      <%= link_to "Show this tweet", tweet %>
-    </p>
-  <% end %>
+  
+      <div class="tweet-container p-3 mb-5 rounded">
+        <%= render tweet %>
+      </div>
+    <% end %>
+  
 </div>
-
-<%= link_to "New tweet", new_tweet_path %>
