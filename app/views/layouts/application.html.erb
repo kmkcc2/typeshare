@@ -14,6 +14,18 @@
   </head>
 
   <body>
+  <script>
+  function showComments(id){
+    
+    if ($("#tweet"+id).hasClass("comments-section-none")){
+        $("#tweet"+id).removeClass("comments-section-none")
+        $("#tweet"+id).addClass("comments-section-visible")
+    }else{
+        $("#tweet"+id).removeClass("comments-section-visible")
+        $("#tweet"+id).addClass("comments-section-none")
+    }
+}
+  </script>
     <% flash.each do |type, msg| %>
       <% if type == "notice" %>
         <div class="alert alert-success" role="alert"> <%= msg %> </div>
@@ -53,8 +65,59 @@
       </div>
     </nav>
     <%# end navbar %>
-    <div class="container col-md-5 col-lg-5 col-sm-5 background-second-color rounded p-5">
+    <div class="row">
+  
+      <div class="container col-md-9 col-lg-5 col-sm-9 background-second-color rounded p-5">
         <%= yield %>
+      </div>
+
+      <div class="col-2 border d-none d-sm-none d-md-none d-lg-block friends-toggle ">
+        <p>Friends</p>
+        <p>Friends</p>
+        <p>Friends</p>
+        <p>Friends</p>
+        <p>Friends</p>
+        <p>Friends</p>
+        <p>Friends</p>
+        <p>Friends</p>
+        <p>Friends</p>
+        <p>Friends</p>
+        <p>Friends</p>
+        <p>Friends</p>
+        <p>Friends</p>
+        <p>Friends</p>
+        <p>Friends</p>
+        <p>Friends</p>
+        <p>Friends</p>
+        <p>Friends</p>
+        <p>Friends</p>
+        <p>Friends</p>
+        <p>Friends</p>
+        <p>Friends</p>
+        <p>Friends</p>
+        <p>Friends</p>
+        <p>Friends</p>
+        <p>Friends</p>
+        <p>Friends</p>
+        <p>Friends</p>
+        <p>Friends</p>
+        <p>Friends</p>
+        <p>Friends</p>
+        <p>Friends</p>
+        <p>Friends</p>
+        <p>Friends</p>
+        <p>Friends</p>
+        <p>Friends</p>
+        <p>Friends</p>
+        <p>Friends</p>
+        <p>Friends</p>
+        <p>Friends</p>
+        <p>Friends</p>
+        <p>Friends</p>
+        <p>Friends</p>
+      </div>
+  
     </div>
+  
   </body>
 </html>

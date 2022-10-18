@@ -14,6 +14,7 @@
  *= require_self
  */
 @import "bootstrap";
+
 $background-base-color: #181818;
 $background-hover-color: #191919;
 $background-second-color: #202020;
@@ -42,10 +43,19 @@ nav {
     background-color: $background-hover-color;
     transition-duration: 0.2s;
 }
-.heart-hover{
+.icon-zoom{
     transition-duration: 0.2s;
 }
-.heart-hover:hover{
+.icon-zoom:hover{
     transform: scale(1.2);
     transition-duration: 0.2s;
+}
+.comments-section-none{
+    display: none;
+}
+.comments-section-visible{
+    display: block;
+}
+.comment-toggler:hover{
+    cursor: pointer;
 }

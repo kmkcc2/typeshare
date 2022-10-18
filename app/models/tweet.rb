@@ -1,6 +1,7 @@
 class Tweet < ApplicationRecord
     belongs_to :user
     has_many :likes
+    has_many :comments
 
     validates :body, length: {minimum: 5, maximum: 250}, presence: true
 
