@@ -36,12 +36,7 @@ nav {
 }
 
 .tweet-container{
-    border: 2px $background-base-color solid;
-    transition-duration: 0.2s;
-}
-.tweet-container:hover{
     background-color: $background-hover-color;
-    transition-duration: 0.2s;
 }
 .icon-zoom{
     transition-duration: 0.2s;
@@ -57,5 +52,13 @@ nav {
     display: block;
 }
 .comment-toggler:hover{
+    cursor: pointer;
+}
+.friend:hover{
+    background-color: $background-second-color;
+    cursor: pointer;
+}
+
+.friend-name:hover{
     cursor: pointer;
 }

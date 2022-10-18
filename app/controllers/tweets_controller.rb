@@ -64,8 +64,6 @@ class TweetsController < ApplicationController
 
     if @like.save
       redirect_to root_path
-      puts "/#tweet_"+@tweet.id.to_s
-      puts "duuuupa"
     else
       redirect_to tweets_url, alert: @like.errors
     end

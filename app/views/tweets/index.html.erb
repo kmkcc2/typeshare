@@ -3,11 +3,8 @@
 
 <div id="tweets" class="mt-5">
   <% @tweets.each do |tweet| %>
-  
-      <div class="tweet-container p-3 mb-5 rounded">
+      <div class="tweet-container rounded">
         <%= render tweet %>
       </div>
-    <% end %>
-    
-  
+    <% end %>  
 </div>
