@@ -1,4 +1,3 @@
-# README
 
 # TypeShare
 ## Aplikacja stworzona do celow edukacyjnych, inspirowana Twitterem.
