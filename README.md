@@ -1,24 +1,11 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# TypeShare
+## aplikacja stworzona do celow edukacyjnych, inspirowana Twitterem.
+### Zalozenia aplikacji
+ system logowania i rejestracji uzytkownikow
+ system publikowania postow na swojej tablicy
+ mozliwosc sledzenia czyjejs tablicy
+ mozliwosc komentowania postow
+ mozliwosc reagowania na posty
+ 
