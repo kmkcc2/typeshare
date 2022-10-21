@@ -1,11 +1,17 @@
 # README
 
 # TypeShare
-## aplikacja stworzona do celow edukacyjnych, inspirowana Twitterem.
+## Aplikacja stworzona do celow edukacyjnych, inspirowana Twitterem.
 ### Zalozenia aplikacji
- system logowania i rejestracji uzytkownikow
- system publikowania postow na swojej tablicy
- mozliwosc sledzenia czyjejs tablicy
- mozliwosc komentowania postow
- mozliwosc reagowania na posty
- 
+1. system logowania i rejestracji uzytkownikow
+2. system publikowania postow na swojej tablicy
+3. mozliwosc sledzenia czyjejs tablicy
+4. mozliwosc komentowania postow
+5. mozliwosc reagowania na posty
+### Wykorzystane technologie
+- Ruby on Rails
+- JavaScript
+- HTML 5
+- CSS3
+- Bootstrap 5
+
