@@ -46,7 +46,7 @@
             <% if user_signed_in? %>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                <%= current_user.email unless !user_signed_in?%>
+                <%= current_user.full_name unless !user_signed_in?%>
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li><a class="dropdown-item" href="<%= show_user_path(current_user) %>">Profile</a></li>
@@ -72,8 +72,10 @@
       </div>
 
       <div class=" col-md-2 col-lg-2 col-sm-2 friends px-5">
-      <h5 class="float-right">Contacts</h5>
-      <hr>
+      <% if user_signed_in? %>
+        <h5 class="float-right">Contacts</h5>
+        <hr>
+      <% end %>
         <% if user_signed_in? %>
           <% @user_list = User.all %>
           <% @user_list.map do |user| %>
@@ -82,7 +84,7 @@
               <img class="rounded-circle shadow-1-strong me-3"
                 src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(26).webp" alt="avatar" width="40"
                 height="40" />
-                <div class="pt-2 friend-name text-truncate"><%= user.email %></div>
+                <a href="/users/show/<%= user.id %>"><div class="pt-2 friend-name text-truncate"><%= user.full_name.blank? ? user.email : user.full_name %></a></div>
             </div>
             <% end %>
           <% end %>

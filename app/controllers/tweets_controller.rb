@@ -6,6 +6,7 @@ class TweetsController < ApplicationController
     # @tweets = current_user.tweets
     @tweets = Tweet.all.order(created_at: :DESC)
     @tweet = current_user.tweets.new 
+    @user = User.find(@tweet.user_id)
   end
 
   # GET /tweets/1 or /tweets/1.json

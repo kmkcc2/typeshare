@@ -10,7 +10,7 @@
                 src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(19).webp" alt="avatar" width="60"
                 height="60" />
               <div>
-                <h6 class="fw-bold text-primary mb-1"><%= User.find(tweet.user_id).email%></h6>
+                <h6 class="fw-bold text-primary mb-1"><a href="/users/show/<%= tweet.user_id %>"><%= User.find(tweet.user_id).full_name.blank? ? User.find(tweet.user_id).email : User.find(tweet.user_id).full_name%></a></h6>
                 <p class="text-muted small mb-0">
                   Shared publicly - <%= tweet.created_at.strftime("%A %H:%M")%>
                 </p>

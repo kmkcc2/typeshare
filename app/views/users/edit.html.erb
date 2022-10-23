@@ -1,8 +1,6 @@
 <section style="background-color: #eee;" class="rounded">
-            <% if current_user == @user%>
-            <%= link_to "edit profile", "/users/edit/"+current_user.id.to_s, class: "float-end btn btn-primary m-1" %>
-        <% end %>
-  <div class="container py-5 rounded">
+<%= form_with model: @user do |f| %>
+<div class="container py-5 rounded">
 
     <div class="row">
       <div class="col-lg-4">
@@ -44,7 +42,7 @@
           </div>
         </div>
       </div>
-      <div class="col-lg-8 text-black">
+     <div class="col-lg-8 text-black">
         <div class="card mb-4">
           <div class="card-body">
             <div class="row">
@@ -52,7 +50,7 @@
                 <p class="mb-0">Full Name</p>
               </div>
               <div class="col-sm-9">
-                <p class="text-muted mb-0"><%= @user.full_name %></p>
+                <p class="text-muted mb-0"><%= f.text_field :full_name, placeholder: @user.full_name, class: "form-control form-control-sm"%></p>
               </div>
             </div>
             <hr>
@@ -61,7 +59,7 @@
                 <p class="mb-0">Email</p>
               </div>
               <div class="col-sm-9">
-                <p class="text-muted mb-0"><%= @user.email %></p>
+                <p class="text-muted mb-0"><%= f.email_field :email, placeholder: @user.email, class: "form-control form-control-sm"%></p>
               </div>
             </div>
             <hr>
@@ -70,7 +68,7 @@
                 <p class="mb-0">Phone</p>
               </div>
               <div class="col-sm-9">
-                <p class="text-muted mb-0"><%= @user.phone %></p>
+                <p class="text-muted mb-0"><%= f.text_field :phone, placeholder: @user.phone, class: "form-control form-control-sm"%></p>
               </div>
             </div>
             <hr>
@@ -80,7 +78,7 @@
                 <p class="mb-0">Address</p>
               </div>
               <div class="col-sm-9">
-                <p class="text-muted mb-0"><%= @user.address %></p>
+                <p class="text-muted mb-0"><%= f.text_field :address, placeholder: @user.address, class: "form-control form-control-sm"%></p>
               </div>
             </div>
           </div>
@@ -92,35 +90,27 @@
                 <p class="mb-4"><span class="text-primary font-italic me-1">About</span>
                 </p>
                 <p class="mb-1" style="font-size: .77rem;">Like to talk</p>
-                <div class="progress rounded" style="height: 5px;">
-                  <div class="progress-bar" role="progressbar" style="width: <%= @user.talk %>%" aria-valuenow="<%= @user.talk %>"
-                    aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
+                <%= f.number_field :talk, in: 0..100, step: 1, placeholder: @user.talk, class: "form-control form-control-sm"%>
                 <p class="mt-4 mb-1" style="font-size: .77rem;">Ready for relationship</p>
-                <div class="progress rounded" style="height: 5px;">
-                  <div class="progress-bar" role="progressbar" style="width: <%= @user.relation %>%" aria-valuenow="<%= @user.relation %>"
-                    aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
+                <%= f.number_field :relation, in: 0..100, step: 1, placeholder: @user.relation, class: "form-control form-control-sm"%>
+
                 <p class="mt-4 mb-1" style="font-size: .77rem;">Netflix lover</p>
-                <div class="progress rounded" style="height: 5px;">
-                  <div class="progress-bar" role="progressbar" style="width: <%= @user.netflix %>%" aria-valuenow="<%= @user.netflix %>"
-                    aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
+                <%= f.number_field :netflix, in: 0..100, step: 1, placeholder: @user.netflix, class: "form-control form-control-sm"%>
+
                 <p class="mt-4 mb-1" style="font-size: .77rem;">Video Games</p>
-                <div class="progress rounded" style="height: 5px;">
-                  <div class="progress-bar" role="progressbar" style="width: <%= @user.games %>%" aria-valuenow="<%= @user.games %>"
-                    aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
+                <%= f.number_field :games, in: 0..100, step: 1, placeholder: @user.games, class: "form-control form-control-sm"%>
+
                 <p class="mt-4 mb-1" style="font-size: .77rem;">Adventurer</p>
-                <div class="progress rounded mb-2" style="height: 5px;">
-                  <div class="progress-bar" role="progressbar" style="width: <%= @user.adventure %>%" aria-valuenow="<%= @user.adventure %>"
-                    aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
+                <%= f.number_field :adventure, in: 0..100, step: 1, placeholder: @user.adventure, class: "form-control form-control-sm"%>
+
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+    
   </div>
+  <%= f.submit class: "btn btn-primary m-3"%>
+<% end%>
 </section>

@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   get 'users/index'
   get '/users/show/:id', to: 'users#show', as: 'show_user'
+  get '/users/edit/:id', to: 'users#edit', as: 'user'
+  patch '/users/edit/:id', to: 'users#update', as: 'update_user'
 
 
   devise_for :users
