@@ -11,4 +11,4 @@ User.create(email: "f@riend.com", password: "test123", full_name: "Chanandler Bo
 
 Tweet.create(body: "Do you guys have som pseudo for sell?", user_id: User.find_by(email: "hais@enberg.com").id)
 Comment.create(text: "let me check. I have lots of pills...", tweet_id: 1, user_id: User.find_by(email: "f@riend.com").id)
-Comment.create(text: "Your pills are swimming in jelly! XDDD", tweet_id: 1, user_id: User.find_by(email: "test@example.com").id)
+Comment.create(text: "Your pills are swimming in jelly! XDDD", tweet_id: 1, user_id: User.find_by(email: "test@example.com").id) 
