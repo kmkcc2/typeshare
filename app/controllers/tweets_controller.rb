@@ -93,4 +93,13 @@ class TweetsController < ApplicationController
       params.permit(:id)
     end
 
+    def check_owner
+      if current_user.id != @tweet.user_id
+        respond_to do |format|
+          format.html { redirect_to root_path, alert: "Login as tweet owner to edit it." }
+          format.json { head :no_content }
+        end 
+      end
+    end
+
 end
